@@ -402,7 +402,13 @@ btnLoan.addEventListener('click', function (e) {
 
       // Update Date
       currentAccount.movementsDates.push(new Date().toISOString());
-    }, 2500);
+
+      // Send Alert of loan
+      alert('Loan approved')
+    }, 10000);
+
+    updateUI(currentAccount);
+    currentAccount.movementsDates.push(new Date().toISOString());
 
     // Reset Timer
     clearInterval(timer);
