@@ -298,7 +298,8 @@ btnLogin.addEventListener('click', function (e) {
   if (currentAccount?.pin === +inputLoginPin.value) {
     // DisplayUI and Message
     labelWelcome.textContent = `Welcome Back, ${
-      currentAccount.owner.split(' ')[0]
+      currentAccount.owner
+      // .split(' ')[0]
     }`;
 
     // Clear Input Logins
