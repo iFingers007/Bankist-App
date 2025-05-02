@@ -1,4 +1,4 @@
-A banking app that mimicks how some banking apps operate.
+A banking app that mimicks how some banking apps operate, its a project from a javascript masterclass by Jonas Schmedtman
 
 A user can login, transfer money to other users on the app, request loan and delete account
 
