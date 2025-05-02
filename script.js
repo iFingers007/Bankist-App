@@ -396,6 +396,7 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    
     setTimeout(function () {
       currentAccount.movements.push(amount);
       updateUI(currentAccount);
@@ -404,8 +405,8 @@ btnLoan.addEventListener('click', function (e) {
       currentAccount.movementsDates.push(new Date().toISOString());
 
       // Send Alert of loan
-      alert('Loan approved')
-    }, 10000);
+      alert(`Loan of ${formatCurr(amount, currentAccount.locale, currentAccount.currency)} approved`)
+    }, 1000);
 
     updateUI(currentAccount);
     currentAccount.movementsDates.push(new Date().toISOString());
@@ -416,6 +417,9 @@ btnLoan.addEventListener('click', function (e) {
 
     inputLoanAmount.value = '';
     inputLoanAmount.blur();
+  }
+  else {
+    alert('Not Eligible for this amount')
   }
 });
 
